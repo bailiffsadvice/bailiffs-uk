@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+    <title>Privacy policy · Help with Bailiffs</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700&display=swap" rel="stylesheet">
+    <style>
+        /* same base styles */
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Inter', sans-serif; background: #f4f7fc; color: #1e2b3c; line-height: 1.5; min-height: 100vh; display: flex; flex-direction: column; }
+        .page-wrap { max-width: 1280px; margin: 0 auto; padding: 0 1rem 2rem; width: 100%; flex: 1; }
+
+        .sticky-nav { position: sticky; top: 12px; z-index: 1000; width: 100%; display: flex; justify-content: flex-end; margin-bottom: 1rem; }
+        .hamburger-btn { background: rgba(255,255,255,0.98); backdrop-filter: blur(8px); border: 1px solid rgba(221,233,245,0.8); border-radius: 60px; padding: 0.7rem 1.5rem; box-shadow: 0 8px 20px rgba(0,20,40,0.12); cursor: pointer; display: inline-flex; align-items: center; gap: 10px; font-size: 1.2rem; font-weight: 600; color: #1f4b7a; }
+        .hamburger-btn i { font-size: 1.6rem; color: #2f6eb3; }
+        .hamburger-btn.active { background: #1f4b7a; color: white; }
+        .hamburger-btn.active i { color: white; }
+
+        .nav-menu { position: absolute; top: calc(100% + 8px); right: 0; width: 240px; background: rgba(255,255,255,0.98); backdrop-filter: blur(8px); border: 1px solid #dde9f5; border-radius: 28px; padding: 1rem 0; display: none; flex-direction: column; z-index: 1001; }
+        .nav-menu.show { display: flex; }
+        .nav-menu a { color: #1f4b7a; text-decoration: none; font-weight: 600; padding: 0.9rem 1.8rem; border-bottom: 1px solid #eef2f6; display: flex; align-items: center; gap: 12px; }
+        .nav-menu a i { width: 24px; color: #2f6eb3; }
+
+        .desktop-nav { display: none; flex-wrap: wrap; justify-content: center; gap: 1.5rem 2.5rem; background: white; padding: 1rem 2rem; border-radius: 60px; margin: 1rem 0 2rem; border: 1px solid #dde9f5; }
+        .desktop-nav a { color: #1f4b7a; text-decoration: none; font-weight: 600; }
+        .desktop-nav a i { margin-right: 6px; color: #2f6eb3; }
+        @media (min-width: 700px) { .sticky-nav { display: none; } .desktop-nav { display: flex; } }
+
+        .site-header { text-align: center; margin: 0.5rem 0 2rem; }
+        .site-header h1 { font-size: 2rem; font-weight: 700; background: linear-gradient(145deg, #0b2b4f, #1f4b7a); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .site-header h1 i { -webkit-text-fill-color: #1f4b7a; }
+        .tagline { font-size: 1.1rem; font-weight: 500; color: #2c3e5c; border-bottom: 2px solid #d0e0f0; padding-bottom: 0.75rem; }
+
+        .card { background: white; border-radius: 28px; padding: 2rem; box-shadow: 0 12px 30px rgba(0,20,50,0.08); border: 1px solid #eef4fa; max-width: 800px; margin: 0 auto; }
+        .card h2 { font-size: 1.8rem; color: #0c2f51; margin-bottom: 1.5rem; }
+        .card h2 i { color: #2f6eb3; margin-right: 10px; }
+        .card p { margin-bottom: 1rem; }
+
+        .footer-nav { margin-top: 3rem; padding-top: 1.5rem; border-top: 2px solid #d0e0f0; display: flex; flex-wrap: wrap; justify-content: center; gap: 1rem 1.8rem; }
+        .footer-nav a { color: #1f4b7a; text-decoration: none; font-weight: 600; }
+        .copyright { text-align: center; margin-top: 1rem; color: #3f6286; font-size: 0.85rem; }
+    </style>
+</head>
+<body>
+    <div class="page-wrap">
+        <div class="sticky-nav">
+            <div class="hamburger-btn" id="hamburgerBtn"><i class="fas fa-bars"></i> <span>Menu</span></div>
+            <div class="nav-menu" id="navMenu">
+                <a href="index.html"><i class="fa-solid fa-house"></i> Home</a>
+                <a href="about.html"><i class="fa-regular fa-address-card"></i> About</a>
+                <a href="contact.html"><i class="fa-regular fa-envelope"></i> Contact</a>
+                <a href="terms.html"><i class="fa-regular fa-file-lines"></i> Terms</a>
+                <a href="privacy.html"><i class="fa-regular fa-lock"></i> Privacy</a>
+            </div>
+        </div>
+        <div class="desktop-nav">
+            <a href="index.html"><i class="fa-solid fa-house"></i> Home</a>
+            <a href="about.html"><i class="fa-regular fa-address-card"></i> About</a>
+            <a href="contact.html"><i class="fa-regular fa-envelope"></i> Contact</a>
+            <a href="terms.html"><i class="fa-regular fa-file-lines"></i> Terms</a>
+            <a href="privacy.html"><i class="fa-regular fa-lock"></i> Privacy</a>
+        </div>
+
+        <div class="site-header">
+            <h1><i class="fas fa-shield-halved"></i> Help with Bailiffs</h1>
+            <div class="tagline">Privacy policy</div>
+        </div>
+
+        <div class="card">
+            <h2><i class="fa-regular fa-lock"></i> Your privacy</h2>
+            <p><strong>Data collection:</strong> When you use our fact finder or contact forms, we collect your name, email, phone, and debt details. This helps us provide advice and connect you with trusted partners.</p>
+            <p><strong>Use of data:</strong> We may contact you via phone, email, SMS, or WhatsApp. We never sell your data.</p>
+            <p><strong>Security:</strong> We use secure forms (Web3Forms) and do not store credit card details.</p>
+            <p><strong>Your rights:</strong> You can request deletion of your data anytime by <a href="contact.html">contacting us</a>.</p>
+        </div>
+
+        <footer>
+            <div class="footer-nav">
+                <a href="about.html">About</a> <a href="terms.html">Terms</a> <a href="privacy.html">Privacy</a> <a href="contact.html">Contact</a>
+            </div>
+            <div class="copyright">© 2025 Help with Bailiffs</div>
+        </footer>
+    </div>
+
+    <script>
+        (function(){
+            const btn = document.getElementById('hamburgerBtn');
+            const menu = document.getElementById('navMenu');
+            function toggle(){
+                menu.classList.toggle('show');
+                btn.classList.toggle('active');
+                const icon = btn.querySelector('i');
+                const span = btn.querySelector('span');
+                if(menu.classList.contains('show')){ icon.className = 'fas fa-times'; span.textContent = 'Close'; }
+                else { icon.className = 'fas fa-bars'; span.textContent = 'Menu'; }
+            }
+            btn.addEventListener('click', (e) => { e.stopPropagation(); toggle(); });
+            menu.querySelectorAll('a').forEach(link => link.addEventListener('click', () => { if(window.innerWidth<=699) toggle(); }));
+            document.addEventListener('click', (e) => { if(window.innerWidth<=699 && !btn.contains(e.target) && !menu.contains(e.target) && menu.classList.contains('show')) toggle(); });
+        })();
+    </script>
+</body>
+</html>
