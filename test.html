@@ -1,0 +1,577 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Debt Helper Team · Free up help with debts</title>
+  <!-- Font Awesome 6 (free) for icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    }
+
+    body {
+      background-color: #f6f9fc;
+      color: #1a2b3f;
+      line-height: 1.5;
+    }
+
+    .container {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    /* header & navigation */
+    .top-bar {
+      background-color: #ffffff;
+      border-bottom: 1px solid #e4edf2;
+      padding: 16px 0;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+
+    .top-bar .container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+    }
+
+    .logo-area {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .logo-icon {
+      background-color: #0056a7;
+      color: white;
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 24px;
+      font-weight: 600;
+    }
+
+    .logo-text {
+      font-weight: 700;
+      font-size: 1.5rem;
+      letter-spacing: -0.5px;
+      color: #0b2b4a;
+    }
+
+    .logo-text span {
+      font-weight: 400;
+      color: #3b6b9b;
+      font-size: 1rem;
+      display: block;
+      line-height: 1.2;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 32px;
+      font-weight: 500;
+      color: #1d3e5e;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: inherit;
+      font-size: 0.95rem;
+    }
+
+    .cta-header {
+      background-color: #ffd966;
+      padding: 10px 24px;
+      border-radius: 40px;
+      font-weight: 700;
+      color: #1a2b3f;
+      text-decoration: none;
+      font-size: 0.9rem;
+      border: 1px solid #eab308;
+    }
+
+    /* hero / main CTA area */
+    .hero {
+      background: linear-gradient(135deg, #e6f0fa 0%, #ffffff 80%);
+      padding: 48px 0;
+      border-bottom: 1px solid #d9e5ee;
+    }
+
+    .hero-grid {
+      display: flex;
+      align-items: center;
+      gap: 40px;
+      flex-wrap: wrap;
+    }
+
+    .hero-text {
+      flex: 1 1 300px;
+    }
+
+    .hero-text h1 {
+      font-size: 2.8rem;
+      font-weight: 700;
+      line-height: 1.2;
+      color: #0a2647;
+      margin-bottom: 16px;
+    }
+
+    .hero-text .highlight {
+      background-color: #ffd966;
+      padding: 4px 10px;
+      display: inline-block;
+      border-radius: 40px;
+      font-weight: 600;
+      font-size: 1.1rem;
+      margin-bottom: 16px;
+    }
+
+    .hero-features {
+      list-style: none;
+      margin: 24px 0;
+    }
+
+    .hero-features li {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-size: 1.1rem;
+      margin-bottom: 14px;
+    }
+
+    .hero-features i {
+      color: #0f6b3e;
+      width: 24px;
+      font-size: 1.3rem;
+    }
+
+    .disclaimer-small {
+      font-size: 0.8rem;
+      color: #4e6479;
+      background: #eef4f8;
+      padding: 16px;
+      border-radius: 12px;
+      margin-top: 16px;
+    }
+
+    /* form panel */
+    .form-panel {
+      flex: 1 1 360px;
+      background: white;
+      border-radius: 32px;
+      padding: 32px 28px;
+      box-shadow: 0 20px 35px -8px rgba(0, 45, 80, 0.15);
+      border: 1px solid #cbddee;
+    }
+
+    .form-panel h3 {
+      font-size: 1.8rem;
+      font-weight: 600;
+      margin-bottom: 8px;
+    }
+
+    .step-indicator {
+      color: #24678b;
+      font-weight: 600;
+      margin-bottom: 24px;
+      border-bottom: 1px dashed #b6cfdf;
+      padding-bottom: 12px;
+    }
+
+    .form-group {
+      margin-bottom: 20px;
+    }
+
+    .form-group label {
+      font-weight: 500;
+      font-size: 0.9rem;
+      color: #264e6e;
+      display: block;
+      margin-bottom: 6px;
+    }
+
+    .form-group input, .form-group select {
+      width: 100%;
+      padding: 14px 18px;
+      border: 1px solid #b9cfdf;
+      border-radius: 60px;
+      font-size: 1rem;
+      background-color: #f9fcff;
+    }
+
+    .form-row {
+      display: flex;
+      gap: 15px;
+      flex-wrap: wrap;
+    }
+
+    .form-row .form-group {
+      flex: 1 1 120px;
+    }
+
+    .consent-text {
+      font-size: 0.75rem;
+      color: #426f8b;
+      margin: 16px 0 8px;
+    }
+
+    .consent-text a {
+      color: #0d4b6e;
+    }
+
+    .btn-next {
+      background-color: #1c4e70;
+      color: white;
+      border: none;
+      padding: 16px 32px;
+      width: 100%;
+      border-radius: 60px;
+      font-size: 1.2rem;
+      font-weight: 700;
+      cursor: pointer;
+      transition: 0.2s;
+      margin-top: 12px;
+    }
+
+    .btn-next:hover {
+      background-color: #0f3b58;
+    }
+
+    .money-helper {
+      background: #e2edf5;
+      border-radius: 16px;
+      padding: 16px;
+      margin-top: 24px;
+      font-size: 0.85rem;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .money-helper i {
+      font-size: 2rem;
+      color: #1f5f8b;
+    }
+
+    /* section title */
+    .section-title {
+      text-align: center;
+      font-size: 2.5rem;
+      font-weight: 600;
+      color: #0f2b40;
+      margin: 48px 0 16px;
+    }
+
+    .section-sub {
+      text-align: center;
+      color: #3d6079;
+      margin-bottom: 48px;
+    }
+
+    /* solution cards general */
+    .solution-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 60px;
+      margin: 48px 0;
+    }
+
+    .solution-card {
+      background: white;
+      border-radius: 40px;
+      padding: 32px 36px;
+      box-shadow: 0 6px 18px rgba(0, 40, 70, 0.06);
+      border: 1px solid #deecf5;
+    }
+
+    .solution-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      margin-bottom: 24px;
+    }
+
+    .solution-header h2 {
+      font-size: 2.2rem;
+      font-weight: 600;
+      color: #0d3b58;
+    }
+
+    .pill-badge {
+      background-color: #f2e7c9;
+      padding: 6px 16px;
+      border-radius: 40px;
+      font-weight: 600;
+      color: #5b4400;
+    }
+
+    .procon-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 28px;
+      margin: 28px 0;
+    }
+
+    .pro, .con {
+      background: #f5faff;
+      padding: 22px;
+      border-radius: 24px;
+    }
+
+    .pro h3, .con h3 {
+      font-size: 1.3rem;
+      margin-bottom: 16px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .pro h3 i { color: #1c8b4c; }
+    .con h3 i { color: #b13e3e; }
+
+    .pro ul, .con ul {
+      list-style: none;
+    }
+
+    .pro li, .con li {
+      margin-bottom: 12px;
+      font-size: 0.95rem;
+      display: flex;
+      gap: 10px;
+      align-items: flex-start;
+    }
+
+    .pro li i { color: #1c8b4c; margin-top: 4px; width: 20px; }
+    .con li i { color: #b13e3e; margin-top: 4px; width: 20px; }
+
+    .how-it-works {
+      background-color: #f0f7fd;
+      border-radius: 24px;
+      padding: 22px;
+      margin-top: 20px;
+    }
+
+    .how-it-works h4 {
+      font-size: 1.2rem;
+      margin-bottom: 8px;
+      color: #003057;
+    }
+
+    hr.divider {
+      margin: 24px 0;
+      border: 1px solid #cde0ed;
+    }
+
+    .dmp-specific, .bankruptcy-specific {
+      background: #f9f7f0;
+    }
+
+    /* footer / legal */
+    .footer {
+      background-color: #1b3449;
+      color: #dbecf9;
+      padding: 40px 0;
+      margin-top: 64px;
+      border-radius: 40px 40px 0 0;
+    }
+
+    .footer a {
+      color: #ffdb8e;
+    }
+
+    .footer-small {
+      font-size: 0.8rem;
+      opacity: 0.9;
+    }
+
+    @media (max-width: 700px) {
+      .procon-grid { grid-template-columns: 1fr; }
+      .hero-text h1 { font-size: 2.2rem; }
+      .top-bar .container { flex-direction: column; gap: 15px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="top-bar">
+    <div class="container">
+      <div class="logo-area">
+        <div class="logo-icon">DH</div>
+        <div class="logo-text">Debt Helper Team <span>formal & informal solutions</span></div>
+      </div>
+      <div class="nav-links">
+        <a href="#">IVA</a>
+        <a href="#">DRO</a>
+        <a href="#">DMP</a>
+        <a href="#">Bankruptcy</a>
+      </div>
+      <a href="#" class="cta-header"><i class="fas fa-phone-alt"></i> 0800 123 4567</a>
+    </div>
+  </div>
+
+  <!-- hero + fact finder -->
+  <section class="hero">
+    <div class="container hero-grid">
+      <div class="hero-text">
+        <span class="highlight">Formal debt solutions can help you</span>
+        <h1>You could write off unaffordable debts</h1>
+        <ul class="hero-features">
+          <li><i class="fas fa-circle-check"></i> Reduce & consolidate repayments</li>
+          <li><i class="fas fa-circle-check"></i> Freeze interest and charges</li>
+          <li><i class="fas fa-circle-check"></i> Legal protection against creditors</li>
+        </ul>
+        <div class="disclaimer-small">
+          <i class="fas fa-scale-balanced"></i> May not be suitable in all circumstances. Your credit rating may be affected. Fees apply on successful applications which will be advised and built into your payment plan.
+        </div>
+      </div>
+
+      <!-- Fact finder form (step 1 of 6) -->
+      <div class="form-panel">
+        <h3>Fact finder…</h3>
+        <div class="step-indicator"><i class="far fa-clock"></i> Step 1 of 6</div>
+        <form>
+          <div class="form-group">
+            <label>Debt level *</label>
+            <select>
+              <option>£5,000 – £10,000</option>
+              <option>£10,000 – £20,000</option>
+              <option>£20,000+</option>
+            </select>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label>Title *</label>
+              <select><option>Mr</option><option>Mrs</option><option>Ms</option></select>
+            </div>
+            <div class="form-group">
+              <label>Full name *</label>
+              <input type="text" placeholder="e.g. James">
+            </div>
+          </div>
+          <div class="form-group">
+            <label>Email address *</label>
+            <input type="email" placeholder="name@example.com">
+          </div>
+          <div class="form-row">
+            <div class="form-group"><label>Phone *</label><input type="tel" placeholder="07..."></div>
+            <div class="form-group"><label>Postcode</label><input placeholder="e.g. SW1A 1AA"></div>
+          </div>
+          <p class="consent-text">By completing your details above you consent to being contacted by Phone, SMS, Email or WhatsApp and agree with the terms set out in our <a href="#">privacy policy</a>. You can opt out at any time on request.</p>
+          <button class="btn-next">Continue <i class="fas fa-arrow-right"></i></button>
+        </form>
+        <div class="money-helper">
+          <i class="fas fa-circle-info"></i>
+          <div><strong>Money Helper</strong> (formerly The Money Advice Service) is a free service set up by the Government to help people make the most of their money. <a href="#">click here</a></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="container">
+    <h2 class="section-title">Understanding debt solutions</h2>
+    <div class="solution-grid">
+
+      <!-- IVA block -->
+      <div class="solution-card">
+        <div class="solution-header">
+          <h2><i class="fas fa-file-signature" style="color:#1f628d;"></i> Individual Voluntary Arrangement (IVA)</h2>
+          <span class="pill-badge">England, Wales, NI</span>
+        </div>
+        <div class="procon-grid">
+          <div class="pro">
+            <h3><i class="fas fa-thumbs-up"></i> IVA Advantages</h3>
+            <ul>
+              <li><i class="fas fa-check"></i> One affordable monthly payment – living costs taken into account</li>
+              <li><i class="fas fa-check"></i> Stop interest and charges (frozen by creditors)</li>
+              <li><i class="fas fa-check"></i> Write off significant % of debt after ~5 years</li>
+              <li><i class="fas fa-check"></i> Protect your home and vehicle (reasonable value)</li>
+              <li><i class="fas fa-check"></i> Stop worrying calls & letters – legally binding</li>
+              <li><i class="fas fa-check"></i> Stop court and bailiff action</li>
+            </ul>
+          </div>
+          <div class="con">
+            <h3><i class="fas fa-thumbs-down"></i> IVA Disadvantages</h3>
+            <ul>
+              <li><i class="fas fa-times"></i> Requires creditor agreement (75% in value)</li>
+              <li><i class="fas fa-times"></i> Keeping to a strict budget can be difficult</li>
+              <li><i class="fas fa-times"></i> Affects credit score for 6 years</li>
+              <li><i class="fas fa-times"></i> Added to Individual Insolvency Register (removed 3 mo. after)</li>
+              <li><i class="fas fa-times"></i> Fees are included in your monthly payment</li>
+              <li><i class="fas fa-times"></i> Need approval for credit over £500</li>
+            </ul>
+          </div>
+        </div>
+        <div class="how-it-works">
+          <h4><i class="fas fa-gear"></i> About IVA – how it works</h4>
+          <p>An Individual Voluntary Arrangement (IVA) is a legally binding agreement to pay back an affordable portion of debt, usually over 5 years. An Insolvency Practitioner prepares a proposal; creditors vote. If 75% agree, the IVA is approved. From your monthly payment, fees are deducted. After successful completion, remaining unsecured debt is written off.</p>
+        </div>
+      </div>
+
+      <!-- DRO card -->
+      <div class="solution-card">
+        <div class="solution-header">
+          <h2><i class="fas fa-shield"></i> Debt Relief Order (DRO)</h2>
+          <span class="pill-badge">England & Wales only</span>
+        </div>
+        <div class="procon-grid">
+          <div class="pro"><h3><i class="fas fa-thumbs-up"></i> DRO Benefits</h3><ul><li><i class="fas fa-check"></i> Debt-free after 12 months</li><li><i class="fas fa-check"></i> No monthly repayments</li><li><i class="fas fa-check"></i> 100% of unsecured debt written off</li><li><i class="fas fa-check"></i> Legal protection from creditors</li></ul></div>
+          <div class="con"><h3><i class="fas fa-thumbs-down"></i> DRO Disadvantages</h3><ul><li><i class="fas fa-times"></i> Not available to home owners</li><li><i class="fas fa-times"></i> Added to Individual Insolvency Register</li><li><i class="fas fa-times"></i> Affects credit score 6 years</li><li><i class="fas fa-times"></i> Strict criteria: disposable income ≤£75, assets ≤£2k, vehicle ≤£4k, debt ≤£50k</li></ul></div>
+        </div>
+        <div class="how-it-works"><h4>How DRO works</h4>Lasts 12 months, no payments. Apply via an Approved Intermediary. Must meet low income/asset criteria. After 12 months, debts written off.</div>
+      </div>
+
+      <!-- DMP -->
+      <div class="solution-card dmp-specific">
+        <div class="solution-header"><h2><i class="fas fa-hand-holding-hand"></i> Debt Management Plan (DMP)</h2><span class="pill-badge">informal</span></div>
+        <div class="procon-grid">
+          <div class="pro"><h3><i class="fas fa-thumbs-up"></i> DMP Advantages</h3><ul><li><i class="fas fa-check"></i> One affordable monthly repayment</li><li><i class="fas fa-check"></i> No need to deal directly with creditors</li><li><i class="fas fa-check"></i> Interest & charges may be frozen (not guaranteed)</li><li><i class="fas fa-check"></i> Flexible, informal, good for short-term changes</li></ul></div>
+          <div class="con"><h3><i class="fas fa-thumbs-down"></i> DMP Disadvantages</h3><ul><li><i class="fas fa-times"></i> No debt forgiveness – usually full repayment</li><li><i class="fas fa-times"></i> Length not fixed, can be long term</li><li><i class="fas fa-times"></i> Credit score affected</li><li><i class="fas fa-times"></i> No legal protection – creditors may still take action</li></ul></div>
+        </div>
+        <div class="how-it-works"><h4>About DMP</h4>Informal agreement via a debt management company. They calculate your disposable income and distribute payments pro-rata. May involve setup/ monthly fees (charities offer free plans).</div>
+      </div>
+
+      <!-- Bankruptcy -->
+      <div class="solution-card bankruptcy-specific">
+        <div class="solution-header"><h2><i class="fas fa-gavel"></i> Bankruptcy</h2><span class="pill-badge">England & Wales</span></div>
+        <div class="procon-grid">
+          <div class="pro"><h3><i class="fas fa-thumbs-up"></i> Bankruptcy Advantages</h3><ul><li><i class="fas fa-check"></i> Debt free after ~12 months (discharged)</li><li><i class="fas fa-check"></i> Legal protection – creditors stop</li><li><i class="fas fa-check"></i> Available to everyone (no strict criteria)</li><li><i class="fas fa-check"></i> Interest frozen</li></ul></div>
+          <div class="con"><h3><i class="fas fa-thumbs-down"></i> Bankruptcy disadvantages</h3><ul><li><i class="fas fa-times"></i> Lose control of assets (home, valuable possessions)</li><li><i class="fas fa-times"></i> £680 fee (may be instalments) before application</li><li><i class="fas fa-times"></i> May need to pay from income for up to 3 years</li><li><i class="fas fa-times"></i> Credit file affected 6 years, on public register</li><li><i class="fas fa-times"></i> May affect employment / being a director</li></ul></div>
+        </div>
+        <div class="how-it-works"><h4>Bankruptcy explained</h4>Formal procedure. Apply via gov.uk with £680 fee. Official Receiver manages assets. Usually discharged after 12 months, but restrictions may apply. Available in England and Wales.</div>
+      </div>
+    </div>
+
+    <!-- note about geography, fees, credit rating (as in original) -->
+    <p style="background: #fff3cd; padding: 16px 24px; border-radius: 60px; margin: 20px 0 40px; font-size:0.9rem; border-left:6px solid #eab308;"><i class="fas fa-circle-exclamation"></i> Your credit rating may be affected. Fees apply on successful applications (where applicable) and will be advised before you commit. IVA only in England, Wales, NI – DRO / Bankruptcy England & Wales only.</p>
+  </div>
+
+  <footer class="footer">
+    <div class="container footer-small">
+      <div style="display: flex; flex-wrap: wrap; gap: 40px; justify-content: space-between;">
+        <div>
+          <i class="fas fa-file-contract"></i> <strong>Debt Helper Team</strong><br>
+          © 2025 – FCA registered (fictional representation)<br>
+          <span style="opacity:0.7">Formal debt solutions may not be suitable for everyone. Always consider seeking independent advice.</span>
+        </div>
+        <div>
+          <a href="#">Privacy</a> | <a href="#">Terms</a> | <a href="#">Contact</a><br>
+          <i class="fas fa-phone"></i> 0800 334 5678
+        </div>
+      </div>
+      <hr style="border-color:#31678c; margin: 24px 0 16px;">
+      <p style="font-size:0.7rem">This is a practice page created for educational purposes, inspired by debthelp-team.co.uk. All information is for demonstration.</p>
+    </div>
+  </footer>
+</body>
+</html>
